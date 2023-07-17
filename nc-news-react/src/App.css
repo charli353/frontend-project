@@ -64,9 +64,9 @@
   border: none;
   background-color: #F4EEE0;
   font-family: 'DM Sans', sans-serif;
-  margin-top: 10px;
+  margin-bottom: 15px;
   border-radius: 2px;
-
+  margin-right: 2px;
 }
 
 .trendall:hover {
@@ -87,3 +87,6 @@ h1 {
   margin-left: 5px;
 }
 
+hr {
+  border: 1px #393646 solid;
+}

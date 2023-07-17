@@ -34,6 +34,7 @@ export default function () {
             <button className='trendall' onClick={(event) => {
                 setTrending(false)
             }}>All Articles</button>
+            <hr />
             <ul>
               <RetrieveArticles trending={trending} articles={articles}/>
             </ul>
@@ -78,6 +79,7 @@ function RetrieveArticles(props) {
                   <h2>{article.title}</h2>
                   <p>Author : {article.author}</p>
                   <p>Topic : {article.topic}</p>
+                  <p>Comments : {article.comment_count}</p>
                  </div>
                     
                     
