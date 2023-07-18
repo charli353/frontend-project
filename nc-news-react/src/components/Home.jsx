@@ -61,18 +61,15 @@ function RetrieveArticles(props) {
               })
         return filterTrending.map((article) => {
                 return ( 
+                  <Link to={`/articles/${article.article_id}`}>
                   <div className='article'>
-                    <Link to={`/articles/${article.article_id}`}>
                     <h2>{article.title}</h2>
-                  </Link>
                     <p>Author : {article.author}</p>
                     <p>Topic : {article.topic}</p>
                     <p>Comments : {article.comment_count}</p>
-                  
                     <p>Article ID : {article.article_id}</p>
-          
                  </div>
-           
+                 </Link>
                )
               })
     }

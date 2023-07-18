@@ -99,3 +99,24 @@ h1 {
 hr {
   border: 1px #393646 solid;
 }
+
+a:link { text-decoration: none; 
+  color: inherit;
+}
+
+
+a:visited { text-decoration: none; 
+  color: inherit;
+}
+
+
+a:hover { text-decoration: none; 
+  color: inherit;
+}
+
+
+
+
+a:active { text-decoration: none; 
+  color: inherit;
+}
