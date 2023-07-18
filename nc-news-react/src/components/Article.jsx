@@ -23,7 +23,7 @@ export default function (props) {
       }, [article])
 
 
-  return loading ? <p>Loading...</p> : (
+  return loading ? <p className='loader'>Loading...</p> : (
     <div id='singleArticle'>
       <h2>{article[0].title}</h2>
       <img src={article[0].article_img_url} alt="Article Cover Art" />
