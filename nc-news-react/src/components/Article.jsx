@@ -34,7 +34,7 @@ export default function (props) {
   return loading ? <p className='loader'>Loading...</p> : (
     <div id='singleArticle'>
       <div id='articleimg'>
-      <h2>{article[0].title}</h2>
+      <h2>"{article[0].title}"</h2>
       <img src={article[0].article_img_url} alt="Article Cover Art" />
       </div>
       <div id='articlebody'>
@@ -61,7 +61,7 @@ function RetrieveComments(props) {
     return comments.map((comment) => {
       return <li>
         <h2>{comment.author}</h2>
-        <p>{comment.body}</p>
+        <p>"{comment.body}"</p>
       </li>
     })
   }
