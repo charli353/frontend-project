@@ -23,7 +23,7 @@ export default function () {
 
 
 
-    return loading ? <p>Loading...</p> : (
+    return loading ? <p className='loader'>Loading...</p> : (
         <main id='mainContainer'>
           <section id='trending'>
             <header>
@@ -67,7 +67,6 @@ function RetrieveArticles(props) {
                     <p>Author : {article.author}</p>
                     <p>Topic : {article.topic}</p>
                     <p>Comments : {article.comment_count}</p>
-                    <p>Article ID : {article.article_id}</p>
                  </div>
                  </Link>
                )
