@@ -1,12 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getArticles } from '../api'
+import { getArticles} from '../api'
+import { Link } from 'react-router-dom'
+
+
 
 export default function () {
 
     const [trending, setTrending] = useState(true)
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
+
   
     useEffect(() => {
       getArticles().then((response) => {
@@ -20,10 +24,7 @@ export default function () {
 
 
     return loading ? <p>Loading...</p> : (
-        <main id='gridContainer'>
-          <nav id='nav'>
-            <h1>NC News</h1>
-          </nav>
+        <main id='mainContainer'>
           <section id='trending'>
             <header>
                 <h2>View Articles</h2>
@@ -53,21 +54,25 @@ export default function () {
 function RetrieveArticles(props) {
     const trending = props.trending
     const articles = props.articles
+    
     if (trending === true) {
         const filterTrending = articles.filter((article) => {
                 return article.comment_count > 10
               })
         return filterTrending.map((article) => {
-
                 return ( 
-                 <div className='article'>
-                  <h2>{article.title}</h2>
-                  <p>Author : {article.author}</p>
-                  <p>Topic : {article.topic}</p>
-                  <p>Comments : {article.comment_count}</p>
+                  <div className='article'>
+                    <Link to={`/articles/${article.article_id}`}>
+                    <h2>{article.title}</h2>
+                  </Link>
+                    <p>Author : {article.author}</p>
+                    <p>Topic : {article.topic}</p>
+                    <p>Comments : {article.comment_count}</p>
+                  
+                    <p>Article ID : {article.article_id}</p>
+          
                  </div>
-                    
-                    
+           
                )
               })
     }
@@ -75,12 +80,14 @@ function RetrieveArticles(props) {
         return articles.map((article) => {
             console.log(article)
                 return ( 
-                 <div className='article'>
+                <Link to={`/articles/${article.article_id}`}>
+                  <div className='article'>
                   <h2>{article.title}</h2>
                   <p>Author : {article.author}</p>
                   <p>Topic : {article.topic}</p>
                   <p>Comments : {article.comment_count}</p>
                  </div>
+                </Link>
                     
                     
                )

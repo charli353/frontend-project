@@ -5,6 +5,15 @@
   background-color: #EEE3CB;
 }
 
+#mainContainer {
+  display: grid;
+  grid-column: 1 / 7;
+  grid-row: 2 / 6;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 50px 50px 200px 200px 200px 130px;
+  background-color: #EEE3CB;
+}
+
 #nav {
   grid-column: 1 / 6;
   grid-row: 1;
@@ -21,7 +30,7 @@
 #trending {
   border: 2px #393646 solid;
   grid-column: 1;
-  grid-row: 2 / 7;
+  grid-row: 1 / 7;
   background-color: #6D5D6E;
 
   text-align: center;
@@ -31,14 +40,14 @@
 #search {
   border: 2px #393646 solid;
   grid-column: 2;
-  grid-row: 2 / 7;
+  grid-row: 1 / 7;
   background-color: #6D5D6E;
   border-radius: 2px;
 }
 #post {
   border: 2px #393646 solid;
   grid-column: 3;
-  grid-row: 2 / 7;
+  grid-row: 1 / 7;
   background-color: #6D5D6E;
   border-radius: 2px;
 }
