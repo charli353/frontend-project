@@ -1,21 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import Article from './components/Article'
-
-
 function App() {
-return (
-  <div id='gridContainer'>
-    <Navbar />
-  <Routes>
-    <Route path='/' element={<Home /> } />
-    <Route path='/articles/:article_id' element={<Article /> }/>
-  </Routes>
-  </div>
-  
-  )
+  const [count, setCount] = useState(0)
+
+  return 
 }
+
 export default App
