@@ -113,6 +113,25 @@
   border: 2px #F4EEE0 solid;
 }
 
+#likebutton:hover {
+  background-color: #362222;
+  border: 2px #F4EEE0 solid;
+  cursor: pointer;
+}
+
+
+#likebutton {
+  margin-top: 10px;
+  border: none;
+  color: #F4EEE0;
+  background-color: #423F3E;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  margin-right: 2px;
+  width: 200px;
+}
+
 .article {
   background-color: #171010;
   border: 2px #F4EEE0 solid;
