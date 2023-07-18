@@ -25,20 +25,8 @@ export const getComments = (id) => {
     })
 }   
 
-export const updateVotes = (id, liked) => {
-    
-    if(!liked){
-
+export const updateVotes = (id) => {
         return defaultURL.patch(`/articles/${id.article_id}`, {inc_votes : + 1}).then(({data}) => {
-            console.log(data)
             return data
         })
     }
-    else {
-        return defaultURL.patch(`/articles/${id.article_id}`, {inc_votes : - 1}).then(({data}) => {
-
-
-            return data
-        })
-    }
-}

@@ -11,7 +11,7 @@ export default function (props) {
     const [showComments, setShow] = useState(false)
     const [loading, setLoading] = useState(true)
     const [likes, setLikes] = useState(0)
-    const [liked, setLiked] = useState(localStorage.getItem('likeCondition') === 'true')
+
 
     const currentId = useParams()
 
@@ -27,15 +27,12 @@ export default function (props) {
             setComments(response)
           })
         })
-        .then(() => {
-          localStorage.setItem('likeCondition', JSON.stringify(liked))
-        })
         .then(()=>{
           setLoading(false)
         })
-      }, [liked])
+      }, [])
 
-      console.log(localStorage.getItem("likeCondition"))
+
 
   return loading ? <p className='loader'>Loading...</p> : (
     <div id='singleArticle'>
@@ -46,10 +43,8 @@ export default function (props) {
       <div id='articlebody'>
       <h3>{article[0].body}</h3>
       <button id='likebutton' onClick={(event) => {
-        updateVotes(currentId, liked).then((response) => {
-          setLikes(response.votes)
-          setLiked(!liked)
-        })
+        setLikes((currLikes) => currLikes + 1)
+        updateVotes(currentId)
       }}>LIKE : {likes}</button>
       
       </div>
