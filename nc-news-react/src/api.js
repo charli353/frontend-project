@@ -17,3 +17,10 @@ export const getArticle = (id) => {
         return data.articles
     })
 }
+
+export const getComments = (id) => {
+    return defaultURL.get(`/articles/${id.article_id}/comments`).then(({data}) => {
+        console.log(data)
+        return data.comments
+    })
+}   
