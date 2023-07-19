@@ -17,7 +17,7 @@
 #nav {
   grid-column: 1 / 6;
   grid-row: 1;
-  background-color: #362222;
+  background-color: #b73840;
   color: #F4EEE0;
   text-align: left;
 }
@@ -28,24 +28,25 @@
 }
 
 #trending {
-  border: 2px #2B2B2B solid;
+  border: 1px #F4EEE0 solid;
   grid-column: 1;
   grid-row: 1 / 7;
   background-color: #423F3E;
+
 
   text-align: center;
   overflow: scroll;
   border-radius: 2px;
 }
 #search {
-  border: 2px #2B2B2B solid;
+  border: 1px #F4EEE0 solid;
   grid-column: 2;
   grid-row: 1 / 7;
   background-color: #423F3E;
   border-radius: 2px;
 }
 #post {
-  border: 2px #2B2B2B solid;
+  border: 1px #F4EEE0 solid;
   grid-column: 3;
   grid-row: 1 / 7;
   background-color: #423F3E;
@@ -77,8 +78,13 @@
   text-align: center;
   margin-right: 20px;
   margin-left: 20px;
+  overflow: scroll;
+  border: 1px #2B2B2B solid;
+  border-radius: 4px;
+}
 
-
+#body {
+  margin: 5px 30px 10px 30px;
 }
 
 #comments {
@@ -111,6 +117,25 @@
 
 #commentsbutton:focus {
   border: 2px #F4EEE0 solid;
+}
+
+#likebutton:hover {
+  background-color: #362222;
+  border: 2px #F4EEE0 solid;
+  cursor: pointer;
+}
+
+
+#likebutton {
+  margin-top: 10px;
+  border: none;
+  color: #F4EEE0;
+  background-color: #b73840;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  margin-right: 2px;
+  width: 200px;
 }
 
 .article {
