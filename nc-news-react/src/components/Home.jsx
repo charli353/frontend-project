@@ -13,7 +13,7 @@ export default function () {
 
   
     useEffect(() => {
-      getArticles().then((response) => {
+      getArticles(trending).then((response) => {
         setArticles(response)
       })
       .then(()=>{
@@ -56,12 +56,9 @@ function RetrieveArticles(props) {
     const articles = props.articles
     
     if (trending === true) {
-        const filterTrending = articles.filter((article) => {
-                return article.comment_count > 10
-              })
-        return filterTrending.map((article) => {
+        return articles.map((article) => {
                 return ( 
-                  <Link to={`/articles/${article.article_id}`}>
+                  <Link to={`/articles/${article.article_id}`} key={article.article_id}>
                   <div className='article'>
                     <h2>{article.title}</h2>
                     <p>Author : {article.author}</p>

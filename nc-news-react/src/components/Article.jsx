@@ -11,6 +11,8 @@ export default function (props) {
     const [showComments, setShow] = useState(false)
     const [loading, setLoading] = useState(true)
     const [likes, setLikes] = useState(0)
+    const [err, setErr] = useState(null);
+
 
 
     const currentId = useParams()
@@ -20,7 +22,7 @@ export default function (props) {
     useEffect(() => {
         getArticle(currentId).then((response) => {
           setArticle(response)
-          setLikes(response[0].votes)
+          setLikes(response.votes)
         })
         .then(() => {
           getComments(currentId).then((response) => {
@@ -32,19 +34,23 @@ export default function (props) {
         })
       }, [])
 
+      
 
 
   return loading ? <p className='loader'>Loading...</p> : (
     <div id='singleArticle'>
       <div id='articleimg'>
-      <h2>"{article[0].title}"</h2>
-      <img src={article[0].article_img_url} alt="Article Cover Art" />
+      <h2>"{article.title}"</h2>
+      <img src={article.article_img_url} alt="Article Cover Art" />
       </div>
       <div id='articlebody'>
-      <h3>{article[0].body}</h3>
+      <h3 id='body'>{article.body}</h3>
       <button id='likebutton' onClick={(event) => {
         setLikes((currLikes) => currLikes + 1)
-        updateVotes(currentId)
+        updateVotes(currentId).catch((err) => {
+          setLikes((currLikes) => currLikes - 1)
+          setErr('Something went wrong. Please try again later')
+        })
       }}>LIKE : {likes}</button>
       
       </div>
