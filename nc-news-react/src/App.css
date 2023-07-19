@@ -17,7 +17,7 @@
 #nav {
   grid-column: 1 / 6;
   grid-row: 1;
-  background-color: #362222;
+  background-color: #b73840;
   color: #F4EEE0;
   text-align: left;
 }
@@ -32,6 +32,7 @@
   grid-column: 1;
   grid-row: 1 / 7;
   background-color: #423F3E;
+
 
   text-align: center;
   overflow: scroll;
@@ -129,7 +130,7 @@
   margin-top: 10px;
   border: none;
   color: #F4EEE0;
-  background-color: #423F3E;
+  background-color: #b73840;
   font-family: 'DM Sans', sans-serif;
   margin-bottom: 15px;
   border-radius: 2px;
